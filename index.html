@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belasting Dienst</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li> </li>
+        </ul>
+    </nav>
+    <section id="">
+        <h1>Belasting Dienst</h1>
+        <h2>Aangifte 2025</h2>
+        <p>Erfbelasting</p>
+        <img id="logo" src="content/belastingDienst.png" alt="logo van de belastingdienst">
+    </section>
+
+    <section id="DeadPerson">
+        <section>
+        <p>1a</p>
+        <div>
+            <label class="text-3-field"  for="Voorletters">Voorletter(s), tussenvoegsel(s) en achternaam
+                <input type="text" name="Voorletters">
+                <input type="text">
+                <input type="text">
+            </label>
+        </div>
+        <div>
+            <label for="">Burgerservicenummer overledende
+                <input type="text" name="Voorletters" maxlength="9">
+            </label>
+        </div>
+            <label for="">Datum huwelijkse of partnerschapsvoorwaarden
+                <div class="date-input-container">
+                    <input type="number" id="day" class="date-segment" placeholder="DD" min="1" max="31" maxlength="2">
+                    <span class="date-separator">-</span>
+                    <input type="number" id="month" class="date-segment" placeholder="MM" min="1" max="12" maxlength="2">
+                    <span class="date-separator">-</span>
+                    <input type="number" id="year" class="date-segment" placeholder="JJJJ" min="1900" max="2100" maxlength="4" style="width: 4em;">
+                </div>
+             </label>
+    
+        </section>
+
+        <section>
+            <p>1b</p>
+            <!-- Getrouwd? -->
+            <label class="2-check-question" for="">Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?
+                <label for="nee">Nee
+                    <input type="checkbox" name="nee">
+                </label>
+                <label for="ja">Ja
+                    <input type="checkbox" name="ja">
+                </label>
+            </label>
+            <!-- Voorwaarden -->
+            <label class="2-check-question" for="">Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?
+                <label for="nee">Nee
+                    <input type="checkbox" name="nee">
+                </label>
+                <label for="ja">Ja. Stuur een kopie van de akte mee met de aangifte
+                    <input type="checkbox" name="ja">
+                </label>
+            </label>
+            <!-- finaal verrekenbeding -->
+            <label class="2-check-question" for="">Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?
+                <label for="nee">Nee
+                    <input type="checkbox" name="nee">
+                </label>
+                <label for="ja">Ja
+                    <input type="checkbox" name="ja">
+                </label>
+            </label>
+
+            <!-- Datum Voorwaarden -->
+             <label for="">Datum huwelijkse of partnerschapsvoorwaarden
+                <div class="date-input-container">
+                    <input type="number" id="day" class="date-segment" placeholder="DD" min="1" max="31" maxlength="2">
+                    <span class="date-separator">-</span>
+                    <input type="number" id="month" class="date-segment" placeholder="MM" min="1" max="12" maxlength="2">
+                    <span class="date-separator">-</span>
+                    <input type="number" id="year" class="date-segment" placeholder="JJJJ" min="1900" max="2100" maxlength="4" style="width: 4em;">
+                </div>
+             </label>
+        </section>
+
+        <section>
+            <p>1c</p>
+              <!-- kinderen? -->
+            <label class="2-check-question" for="">Had de overledene kinderen?
+                <label for="nee">Nee
+                    <input type="checkbox" name="nee">
+                </label>
+                <label for="ja">Ja
+                    <input type="checkbox" name="ja">
+                </label>
+            </label>
+               <!-- kind eerder overleden? -->
+            <label class="2-check-question" for="">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                <label for="nee">Nee
+                    <input type="checkbox" name="nee">
+                </label>
+                <label for="ja">Ja
+                    <input type="checkbox" name="ja">
+                </label>
+            </label>
+               <!-- overleden kind met kinderen? -->
+            <label class="2-check-question" for="">Had dit overleden kind zelf kinderen?
+                <label for="nee">Nee
+                    <input type="checkbox" name="nee">
+                </label>
+                <label for="ja">Ja
+                    <input type="checkbox" name="ja">
+                </label>
+            </label>
+        </section>
+
+        <section>
+            <p>1d</p>
+                <!-- Testament -->
+                <label class="2-check-question" for="">Had dit overleden kind zelf kinderen?
+                    <label for="nee">Nee
+                        <input type="checkbox" name="nee">
+                    </label>
+                    <label for="ja">Ja
+                        <input type="checkbox" name="ja">
+                    </label>
+                </label>
+
+                <div>
+                    <label for="">Protocolnummer notaris
+                        <input type="number" id="protocol" maxlength="6">
+                    </label>
+                    <label class="text-3-field" for="Voorletters">Voorletter(s), tussenvoegsel(s) en achternaam
+                        <input type="text" name="Voorletters">
+                        <input type="text">
+                        <input type="text">
+                    </label>
+                    <label for="">Vestegingsplaats
+                        <input type="text">
+                    </label>
+                    <label for="">Datum huwelijkse of partnerschapsvoorwaarden
+                        <div class="date-input-container">
+                            <input type="number" id="day" class="date-segment" placeholder="DD" min="1" max="31" maxlength="2">
+                            <span class="date-separator">-</span>
+                            <input type="number" id="month" class="date-segment" placeholder="MM" min="1" max="12" maxlength="2">
+                            <span class="date-separator">-</span>
+                            <input type="number" id="year" class="date-segment" placeholder="JJJJ" min="1900" max="2100" maxlength="4" style="width: 4em;">
+                        </div>
+                     </label>
+                </div>
+        </section>
+    </section>
+</body>
+</html>
