@@ -1,0 +1,171 @@
+:root{
+    --button-text: 16px;
+    --text: 16px;
+    --h2: 64px;
+    --nav: 18px;
+
+    --body-width: 100dvw;
+    --section-height: 10em;
+
+    --header-height: 115px;
+    --warning-height: 2em ;
+
+    /* Primary colours */
+  --ns-yellow: #ffc917;
+  --ns-blue: #003082;
+  --ns-lightBlue: #0063d3;
+  --ns-white: #ffffff;
+
+  /* Shades of grey */
+  --ns-gray-text: #070721;
+  --ns-gray-10: #202037;
+  --ns-gray-20: #39394d;
+  --ns-gray-30: #515164;
+  --ns-gray-40: #6a6a7a;
+  --ns-gray-50: #838390;
+  --ns-gray-60: #9c9ca6;
+  --ns-gray-70: #b5b5bc;
+  --ns-gray-80: #cdcdd3;
+  --ns-gray-90: #e6e6e9;
+  --ns-gray-94: #f0f0f2;
+
+  /* Special Colours */
+  --ns-error: #db0029;
+  --ns-succes: #009a42;
+  --ns-ov: #ff0098;
+  --ns-bus: #ff7700;
+
+  /* Link and hover colours */
+  --ns-link-blue: #0079d3;
+  --ns-hover-blue: #005ca0;
+  --ns-hover-yellow: #ffb519;
+
+  /* Transparency colours */
+  --ns-gray-alpha-60: #070721 (60%);
+  --ns-gray-alpha-15: #070721 (15%);
+  --ns-gray-alpha-10: #070721 (10%);
+
+
+  --warning-padding: .1em;
+
+}
+
+body{
+    font-family: 'CartoGothicStd', sans-serif;
+}
+
+h1, h2{
+    font-size: var(--h2);
+    color: var(--ns-blue);
+}
+
+
+
+body{
+    background-color: var(--ns-gray-90);
+
+    
+}
+
+body, body *{
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+  }
+
+.warning{
+    display: flex;
+    height: var(--warning-height);
+    background-color: #39394D;
+    color: white;
+    width: var(--body-width);
+    padding: var( --warning-padding);
+    justify-content: center;
+    /* gap: 1em; */
+    align-items: center;
+    z-index: 100;
+  }
+  .warning svg{
+    fill: white;
+  }
+  
+  .warning p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+  }
+
+
+  
+
+/* #region Font faces */
+@font-face {
+    font-family: CartoGothicStd;
+    src: url('fonts/CartoGothicStd-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: CartoGothicStd;
+    src: url('fonts/CartoGothicStd-BoldItalic.otf') format('opentype');
+    font-weight:bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: CartoGothicStd;
+    src: url('fonts/CartoGothicStd-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: CartoGothicStd;
+    src: url('fonts/CartoGothicStd-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* #endregion */
+
+/*#region media Queries */
+/* @media screen and (max-width: 768px){
+    :root{
+        --section-width: ;
+        --section-height: ;
+    }
+} */
+
+/* @media screen and (min-width: 768px) and (max-width: 1023px) {
+    :root{
+        --section-width: ;
+        --section-height: ;
+    }
+} */
+
+/* @media screen and (min-width: 1024px) {
+    :root{
+        --section-width: 2em;
+        --section-height: 1em;
+    }
+} */
+
+/* #endregion */

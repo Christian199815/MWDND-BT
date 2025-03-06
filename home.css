@@ -1,0 +1,198 @@
+/* #region Header */
+header {
+    height: var(--header-height);
+    width: var(--body-width);
+    background-color: var(--ns-white);
+    border: inset 1px solid red;
+    position: absolute;
+    top: var(--warning-height);
+    padding: 16px 0;
+    z-index: 100;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+header nav a svg {
+    fill: #003082;
+}
+
+header nav a svg:hover {
+    fill: #ffc917;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+    padding: 0 16px;
+}
+
+header nav div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+/* #endregion */
+
+/* #region Hamburger */
+.menu-container {
+    z-index: 100;
+}
+
+.menu-toggle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0;
+}
+
+.hamburger{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* The three spans that make up the hamburger icon */
+.hamburger span {
+    display: block;
+    height: 1px;
+    width: 2em;
+    background-color: var(--ns-blue);
+    border-radius: 2px;
+    /* transition-delay: 2000ms; */
+    transition: all 1.3s ease-in-out;
+}
+
+.hamburger span:nth-child(3) {
+    width: 1em;
+}
+
+.menu-toggle {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    z-index: 2;
+}
+
+/* Menu transform animations */
+#menu-content:target header nav .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    width: 150%;
+}
+
+#menu-content:target ~ header nav .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-content:target ~ header nav .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    width: 150%;
+}
+
+/* Menu display */
+.menu-content {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: var(--body-width);
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease-in-out;
+    z-index: 90;
+}
+
+#menu-content:target {
+    top: calc( var(--header-height) + var(--warning-height));
+}
+/* #endregion */
+
+/* #region Menu content styling */
+.menu-content ul {
+    list-style: none;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.menu-content li {
+    margin-bottom: 15px;
+}
+
+.menu-content a {
+    color: var(--ns-blue);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+    display: block;
+    padding: 5px 0;
+}
+
+.menu-content a:hover {
+    color: var(--ns-yellow);
+}
+
+/* Close button */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    color: var(--ns-blue);
+    font-size: 24px;
+}
+
+/* #endregion */
+
+/* #region Main */
+main{
+    /* height: 100dvh; */
+    width: var(--body-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: var(--header-height);
+}
+
+
+main img{
+    width: var(--body-width);
+}
+
+main section section:first-of-type{
+    background-color: var(--ns-white);
+    width: calc(var(--body-width) - 16px);
+    height: 150px;
+    margin-top: -40px;
+
+}
+
+/* #endregion */
+
+main section form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+main section form{
+    width: calc(var(--body-width) - 16px);
+    /* padding: 16px; */
+    background-color: var(--ns-white);
+}
+
+main section form fieldset {
+    all: unset;
+}
