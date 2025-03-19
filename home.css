@@ -539,7 +539,7 @@ button:hover,
 
 
 .js-enabled #overview-2.active {
-  display: block;
+  display: block !important;
 }
 
 .js-enabled .form-section:not(.active) {

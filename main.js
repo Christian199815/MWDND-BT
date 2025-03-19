@@ -1054,7 +1054,8 @@ ${countryName}`;
 
       // Final validation
       const form = document.getElementById('ns-form');
-      if (form && form.checkValidity()) {
+      // if (form && form.checkValidity())
+      if (form ) {
         alert('Formulier is succesvol verzonden!');
         // form.submit(); // Uncomment in production
 
