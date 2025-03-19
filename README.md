@@ -62,7 +62,7 @@ Mijn plan van vorige week om mijn gemaakte werk van codepen over te zetten naar 
 <details>
   <summary>Het Resultaat</summary>
 
-  ##NS Erfbelasting 2023
+  ## NS Erfbelasting 2023
   Na vier weeken zwoegen heb ik deze websitie gemaakt waar in ik delen van het erfbelasting fysieke formulier heb omgezet. 
 
 
@@ -72,8 +72,10 @@ Mijn plan van vorige week om mijn gemaakte werk van codepen over te zetten naar 
 
   ## Wel Javascript
 
-
-
   
+
+  ## Ontbrekende Onderdelen
+
+
 </details>
 
