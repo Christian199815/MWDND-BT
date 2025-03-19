@@ -1,6 +1,8 @@
 # Browser Technology
 
-Een vierweekse duik in de kracht van moderne HTML, CSS & JavaScript.
+Vier weken lang heb ik me verdiept in HTML, CSS en JavaScript om een digitaal formulier te ontwerpen en bouwen. Van experimenteren met componenten in CodePen tot het structureren van de code in VS Code—dit project laat zien hoe ik stap voor stap een gebruiksvriendelijk en toegankelijk formulier heb ontwikkeld.
+
+Benieuwd naar de uitdagingen, feedback en het eindresultaat? Duik in mijn proces en ontdek hoe ik dit project heb opgebouwd! 🚀
 
 
 <details>
@@ -50,11 +52,18 @@ Hieronder een aantal code structuren die ik verwerkt heb.
 Mijn plan van vorige week om mijn gemaakte werk van codepen over te zetten naar mijn vs code, was een goed plan maar daar lag eigenlijk niet mijn doel. Mijn doel was deze week eigenlijk om de pure html structuur neer te zetten, dus daar was vscode wel de beste plek voor. Opzoek door het document van de erfbelasting kwam ik vele patterns tegen waar input velden gebruikt werden, en daar maakte ik een selectie van.
 ### De onderwerpen waar ik voor gekozen heb:
 <ul>
-  <li>Informatie overledene</li>
-  <li>Adres in het buitenland</li>
-  <li>Verkrijgers</li>
-  <li>IBAN rekening</li>
+  <li><a href="https://codepen.io/Christian199815/pen/pvoWXvR">Informatie overledene</a></li>
+  <li><a href="https://codepen.io/Christian199815/pen/GgROJvY">Adres in het buitenland</li>
+  <li><a href="https://codepen.io/Christian199815/pen/vEYWOrz">Verkrijgers</a></li>
+  <li><a href="https://codepen.io/Christian199815/pen/NPWwgJj">IBAN rekening</a></li>
 </ul>
+
+De onderwerpen hierboven zijn gelinkt aan de verschillende codepen's die ik heb gemaakt voor de verschillende fieldsets. Dit is een manier van coderen die ik heb ontwikkeld om op een voor mij overzichtelijkere en rustigere manier te kunnen coderen.
+
+
+## Week 4: Toch weer naar VS code & de laatste loodjes
+
+
 
 
 </details>
@@ -66,16 +75,46 @@ Mijn plan van vorige week om mijn gemaakte werk van codepen over te zetten naar 
   Na vier weeken zwoegen heb ik deze websitie gemaakt waar in ik delen van het erfbelasting fysieke formulier heb omgezet. 
 
 
-  ## Geen Javascript
-
-
-
   ## Wel Javascript
+  <img src="doc-images/Erf Belasting intro.png" alt="">
+  <img src="doc-images/overledene.png" alt="">
+  <img src="doc-images/adres-buitenland.png" alt="">
+  
+  <img src="doc-images/verkrijgers.png" alt="">
+  <img src="doc-images/2e-verkrijger.png" alt="">
+  <img src="doc-images/Valuta.png" alt="">
+  <img src="doc-images/progress-small screen.png" alt="">
 
+
+
+  ## Geen Javascript
+  <img src="doc-images/no-js below.png" alt=""> <br>
+  Wanneer de gebruiker de javascript uitzet, worden alle fieldset onder elkaar gezet. Technisch gezien staan de fieldset altijd onder elkaar, maar wanneer er javascript is zullen de fielsets verstopt worden. 
+
+  <img src="doc-images/overview1.png" alt=""><br>
+  Deze overview fieldset wordt laten zien als er geen javascript aan staat, wat een basis veld is om voor de gebruiker te kunnen kiezen uit laat ik ik nog eens door al mijn velden gaan om te kijken of het klopt, of om het formulier te versturen.
   
 
   ## Ontbrekende Onderdelen
+  <img src="doc-images/overview1.png" alt=""><br>
+  <img src="doc-images/overview2.png" alt=""><br>
+  Deze overview fieldsets worden niet goed laten zien en dit vind ik jammer want het idee was zo mooi. overview 1 voor standaard gebruik, maar overview 2 gaf de gebruiker de kans om alle data in te zien die ingevuld is. met linkjes terug naar de fieldsets om dit aan te kunnen passen.
+  
+  <img src="doc-images/Valuta.png" alt=""><br>
+  De iban validation heb ik eruit gehaald omdat toen ik aan het testen was kreeg ik foutmeldingen dat de IBAN's die ik zelf bezit niet geldig waren. Dus ik zou nog opzoek willen gaan naar een betere berekening/validatie om dit wel te kunnen toepassen.
+Daarnaast had ik (zoals in de codepen van deze fieldset) een manier gemaakt om het valuta icoontje aante passen naar aanleiding van de eerste letters van de IBAN, dit heb ik in het eindresultaat eruit gehaald gezien ik hier een aantal problemen mee had. Dit zou ik ook nog willen onderzoeken en aanpassen, want het is wel een leuke feature voor de gebruiker.
 
+  ### Wat ik niet heb ingebouwd maar wel wilde!
+  Ik had graag nog een aantal functies en onderdelen willen toevoegen om dit document nog gebruiksvriendelijker te maken.
+
+  #### Focus na verkrijger toevoegen
+  Wanneer de gebruiker een verkrijger veld wilt toevoegen komt dit veld erbij, echter gaat de focus state niet mee naar dit nieuwe veld. Ik zou dit met javascript willen toevoegen zodat de mensen die met screenreaders werken begrijpen dat er een nieuwe verkrijger ingevuld kan worden.
+
+  #### Helper icon
+  Ik zou graag een icon boven onduidelijke input velden willen plaatsen waar de gebruiker op kan drukken/hoveren. Hierna opent zich rond deze locatie een tekst veld, waar de gebruiker meer informatie krijgt.
+
+  #### Dubbel check
+  Ik zou voor de gebruikere een pop up (pop-over) maken warin gevraagd wordt of de gebruiker zeker weet om het formulier te versturen.
 
 </details>
 
