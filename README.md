@@ -2,7 +2,11 @@
 
 Een vierweekse duik in de kracht van moderne HTML, CSS & JavaScript.
 
-## Week 1: Project Initiatie
+
+<details>
+  <summary>Wekelijkse progressie</summary>
+  
+  ## Week 1: Project Initiatie
 
 Deze week lag de focus op het bedenken van een concept en het uitvoeren van de eerste experimenten:
 
@@ -39,3 +43,37 @@ Hieronder een aantal code structuren die ik verwerkt heb.
 
 ### Vrijdag Feedback #2
 <img src="/doc-images/week-2.png" style="width: 25em; aspect-ratio: 1/1;">
+
+
+## Week 3: CodePen zo slecht nog niet
+
+Mijn plan van vorige week om mijn gemaakte werk van codepen over te zetten naar mijn vs code, was een goed plan maar daar lag eigenlijk niet mijn doel. Mijn doel was deze week eigenlijk om de pure html structuur neer te zetten, dus daar was vscode wel de beste plek voor. Opzoek door het document van de erfbelasting kwam ik vele patterns tegen waar input velden gebruikt werden, en daar maakte ik een selectie van.
+### De onderwerpen waar ik voor gekozen heb:
+<ul>
+  <li>Informatie overledene</li>
+  <li>Adres in het buitenland</li>
+  <li>Verkrijgers</li>
+  <li>IBAN rekening</li>
+</ul>
+
+
+</details>
+
+<details>
+  <summary>Het Resultaat</summary>
+
+  ##NS Erfbelasting 2023
+  Na vier weeken zwoegen heb ik deze websitie gemaakt waar in ik delen van het erfbelasting fysieke formulier heb omgezet. 
+
+
+  ## Geen Javascript
+
+
+
+  ## Wel Javascript
+
+
+
+  
+</details>
+
