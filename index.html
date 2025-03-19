@@ -1,162 +1,960 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belasting Dienst</title>
+  <!-- <script src="noJS.js"></script> -->
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav>
-        <ul>
-            <li>naar infoblock</li>
-            <li>naar overledene</li>
-            <li>naar extra</li>
-        </ul>
-    </nav>
-    <section id="">
-        <h1>Belasting Dienst</h1>
-        <h2>Aangifte 2025</h2>
-        <p>Erfbelasting</p>
-        <img id="logo" src="content/belastingDienst.png" alt="logo van de belastingdienst">
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body class="no-js">
+    <div class="warning">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+      >
+        <title>info--small</title>
+        <path
+          d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM10,1a9,9,0,1,0,9,9A9.011,9.011,0,0,0,10,1Z"
+        />
+        <path
+          d="M10,6.5h0a.75.75,0,0,1-.75-.75h0A.75.75,0,0,1,10,5h0a.75.75,0,0,1,.75.75h0A.75.75,0,0,1,10,6.5Z"
+        />
+        <path d="M10,8.5a.5.5,0,0,0-.5.5v6.5h1V9A.5.5,0,0,0,10,8.5Z" />
+      </svg>
+      <p>
+        Dit is een fictief document vanuit een schoolopdracht. Dit is niet van
+        de NS!
+      </p>
+    </div>
 
-    <section id="DeadPerson">
+    <main>
+      <img src="content/tristan.jpg" alt="photo of boy on the couch" />
+      <section>
         <section>
-        <p>1a</p>
+          <h2>Erfbelasting 2023</h2>
+          <p>
+            Dit formulier is voor de aangifte erfbelasting bij een overlijden in
+            2023. De aangifte kan meestal online via Mijn Belastingdienst op
+            belastingdienst.nl/erfbelasting. Wie moet aangifte doen? Executeur
+            (indien aangewezen en geaccepteerd) doet aangifte voor alle
+            verkrijgers. Geen executeur? Dan doen erfgenamen dit voor zichzelf
+            en andere verkrijgers. Termijn en belastingrente Aangifte moet
+            binnen 8 maanden na overlijden worden ingediend. Te laat? Vraag
+            uitstel aan via de website. Belastingrente wordt berekend bij een te
+            late of onjuiste aangifte, dit kan worden voorkomen door tijdig en
+            correct aangifte te doen of een voorlopige aanslag aan te vragen.
+            Hoeveel erfbelasting? Gebruik de rekenhulp op
+            belastingdienst.nl/erfbelasting om te berekenen hoeveel erfbelasting
+            verschuldigd is. Aangifte invullen en indienen Vul de gegevens in
+            zoals ze waren op de overlijdensdatum. Rond bedragen naar beneden
+            af. Raadpleeg de digitale toelichting voor hulp bij het invullen. Te
+            weinig ruimte? Voeg digitale bijlagen toe. Dien de aangifte online
+            in via Mijn Belastingdienst. Alle informatie en het privacybeleid
+            zijn te vinden op belastingdienst.nl/erfbelasting.
+          </p>
+        </section>
+
+        <form id="ns-form">
+          <!-- Progress Indicator (only visible with JS) - Modified to merge acquirer steps -->
+          <ul class="progress-bar hidden">
+            <li class="progress-step active" data-step="1">Overledene</li>
+            <li class="progress-step" data-step="2">Adres</li>
+            <li class="progress-step" data-step="3">Verkrijgers</li>
+            <li class="progress-step" data-step="4">Bank</li>
+            <li class="progress-step" data-step="5">Overzicht</li>
+          </ul>
+
+          <fieldset id="deadPerson" class="form-section active">
+            <legend>Gegevens van de Overledene</legend>
+
+            <label for="dp-firstname">Voorletter(s) *</label>
+            <input
+              type="text"
+              id="dp-firstname"
+              name="firstname"
+              pattern="[A-Za-z\.]+"
+              class="nameDots"
+              placeholder="A.B.C."
+              required
+              title="Alleen letters zijn toegestaan"
+            />
+            <span class="error-message">Vul a.u.b. alleen letters in</span>
+
+            <label for="dp-between">Tussenvoegsel(s)</label>
+            <input
+              type="text"
+              id="dp-between"
+              name="between"
+              placeholder="van der"
+            />
+
+            <label for="dp-lastname">Achternaam *</label>
+            <input
+              type="text"
+              id="dp-lastname"
+              name="lastname"
+              placeholder="Jansen"
+              required
+            />
+            <span class="error-message">Vul a.u.b. een achternaam in</span>
+
+            <label for="dp-BSN">Burgerservice nummer *</label>
+            <input
+              type="text"
+              id="dp-BSN"
+              name="bsn"
+              pattern="[0-9]{7,9}"
+              placeholder="123456789"
+              minlength="7"
+              maxlength="9"
+              required
+              title="BSN moet 7 tot 9 cijfers bevatten"
+            />
+            <span class="error-message">BSN moet 7 tot 9 cijfers bevatten</span>
+
+            <label for="dp-deathDate">Overlijdensdatum *</label>
+            <input type="date" id="dp-deathDate" name="deathDate" required />
+            <span class="error-message">Vul a.u.b. een geldige datum in</span>
+
+            <div class="nav-buttons">
+              <a
+                href="#foreignAddress"
+                id="volgende1"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <fieldset id="foreignAddress" class="form-section">
+            <legend>Adres in het buitenland</legend>
+
+            <div>
+              <label for="fa-country">Land</label>
+            </div>
+            <div>
+              <input type="text" id="fa-country" required list="countries" />
+              <datalist id="countries">
+                <option value="Nederland" data-code="NLD"></option>
+                <option value="Albanië" data-code="ALB"></option>
+                <option value="Argentinië" data-code="ARG"></option>
+                <option value="Armenië" data-code="ARM"></option>
+                <option value="Aruba" data-code="ABW"></option>
+                <option value="Australië" data-code="AUS"></option>
+                <option value="Azerbeidzjan" data-code="AZE"></option>
+                <option value="Bahrein" data-code="BHR"></option>
+                <option value="Bangladesh" data-code="BGD"></option>
+                <option value="Barbados" data-code="BRB"></option>
+                <option value="Belarus (Wit-Rusland)" data-code="BLR"></option>
+                <option value="België" data-code="BEL"></option>
+                <option value="Bermuda" data-code="BMU"></option>
+                <option
+                  value="Bonaire, St. Eustatius en Saba"
+                  data-code="BES"
+                ></option>
+                <option value="Bosnië-Herzegovina" data-code="BIH"></option>
+                <option value="Brazilië" data-code="BRA"></option>
+                <option value="Bulgarije" data-code="BGR"></option>
+                <option value="Canada" data-code="CAN"></option>
+                <option value="China" data-code="CHN"></option>
+                <option value="Curaçao" data-code="CUW"></option>
+                <option value="Cyprus" data-code="CYP"></option>
+                <option value="Denemarken" data-code="DNK"></option>
+                <option value="Duitsland" data-code="DEU"></option>
+                <option value="Egypte" data-code="EGY"></option>
+                <option value="Estland" data-code="EST"></option>
+                <option value="Filippijnen" data-code="PHL"></option>
+                <option value="Finland" data-code="FIN"></option>
+                <option value="Frankrijk" data-code="FRA"></option>
+                <option value="Georgië" data-code="GEO"></option>
+                <option value="Ghana" data-code="GHA"></option>
+                <option value="Griekenland" data-code="GRC"></option>
+                <option value="Hongarije" data-code="HUN"></option>
+                <option value="Hongkong" data-code="HKG"></option>
+                <option value="Ierland" data-code="IRL"></option>
+                <option value="IJsland" data-code="ISL"></option>
+                <option value="India" data-code="IND"></option>
+                <option value="Indonesië" data-code="IDN"></option>
+                <option value="Israël" data-code="ISR"></option>
+                <option value="Italië" data-code="ITA"></option>
+                <option value="Japan" data-code="JPN"></option>
+                <option value="Jordanië" data-code="JOR"></option>
+                <option value="Kazachstan" data-code="KAZ"></option>
+                <option value="Kirgizië" data-code="KGZ"></option>
+                <option value="Koeweit" data-code="KWT"></option>
+                <option value="Kroatië" data-code="HRV"></option>
+                <option value="Letland" data-code="LVA"></option>
+                <option value="Litouwen" data-code="LTU"></option>
+                <option value="Luxemburg" data-code="LUX"></option>
+                <option value="Macedonië" data-code="MKD"></option>
+                <option value="Malawi" data-code="MWI"></option>
+                <option value="Maleisië" data-code="MYS"></option>
+                <option value="Malta" data-code="MLT"></option>
+                <option value="Marokko" data-code="MAR"></option>
+                <option value="Mexico" data-code="MEX"></option>
+                <option value="Moldavië" data-code="MDA"></option>
+                <option value="Montenegro" data-code="MNE"></option>
+                <option value="Nieuw-Zeeland" data-code="NZL"></option>
+                <option value="Nigeria" data-code="NGA"></option>
+                <option value="Noorwegen" data-code="NOR"></option>
+                <option value="Oekraïne" data-code="UKR"></option>
+                <option value="Oezbekistan" data-code="UZB"></option>
+                <option value="Oman" data-code="OMN"></option>
+                <option value="Oostenrijk" data-code="AUT"></option>
+                <option value="Pakistan" data-code="PAK"></option>
+                <option value="Panama" data-code="PAN"></option>
+                <option value="Polen" data-code="POL"></option>
+                <option value="Portugal" data-code="PRT"></option>
+                <option value="Qatar" data-code="QAT"></option>
+                <option value="Roemenië" data-code="ROU"></option>
+                <option value="Rusland" data-code="RUS"></option>
+                <option value="Saudi-Arabië" data-code="SAU"></option>
+                <option value="Servië" data-code="SRB"></option>
+                <option value="Singapore" data-code="SGP"></option>
+                <option value="Sint Maarten" data-code="SXM"></option>
+                <option value="Slovenië" data-code="SVN"></option>
+                <option value="Slowakije" data-code="SVK"></option>
+                <option value="Spanje" data-code="ESP"></option>
+                <option value="Sri Lanka" data-code="LKA"></option>
+                <option value="Suriname" data-code="SUR"></option>
+                <option value="Tadzjikistan" data-code="TJK"></option>
+                <option value="Taiwan" data-code="TWN"></option>
+                <option value="Thailand" data-code="THA"></option>
+                <option value="Tsjechië" data-code="CZE"></option>
+                <option value="Tunesië" data-code="TUN"></option>
+                <option value="Turkije" data-code="TUR"></option>
+                <option value="Uganda" data-code="UGA"></option>
+                <option value="Venezuela" data-code="VEN"></option>
+                <option value="Verenigd Koninkrijk" data-code="GBR"></option>
+                <option
+                  value="Verenigde Arabische Emiraten"
+                  data-code="ARE"
+                ></option>
+                <option
+                  value="Verenigde Staten van Amerika"
+                  data-code="USA"
+                ></option>
+                <option value="Vietnam" data-code="VNM"></option>
+                <option value="Zambia" data-code="ZMB"></option>
+                <option value="Zimbabwe" data-code="ZWE"></option>
+                <option value="Zuid-Afrika" data-code="ZAF"></option>
+                <option value="Zuid-Korea" data-code="KOR"></option>
+                <option value="Zweden" data-code="SWE"></option>
+                <option value="Zwitserland" data-code="CHE"></option>
+              </datalist>
+              <span class="error">Voer een geldig land in uit de lijst</span>
+
+              <!-- Hidden input to store the actual land code -->
+              <input type="hidden" id="fa-landCode" name="landCode" />
+            </div>
+
+            <div>
+              <label for="fa-street">Straat</label>
+              <span>en</span>
+              <label for="fa-houseNum">huisnummer</label>
+            </div>
+            <div class="input-row">
+              <div>
+                <input
+                  type="text"
+                  id="fa-street"
+                  placeholder="bv. binnenhof"
+                  required
+                />
+                <span class="error">Voer een straatnaam in</span>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="fa-houseNum"
+                  placeholder="bv. 123"
+                  required
+                  pattern="^[0-9]+[a-zA-Z0-9\-]*$"
+                />
+                <span class="error"
+                  >Huisnummer moet beginnen met cijfers, daarna letters, cijfers
+                  of streepjes</span
+                >
+              </div>
+            </div>
+            <div>
+              <label for="fa-postal">Postcode</label>
+              <span>en</span>
+              <label for="fa-city">Plaats</label>
+            </div>
+            <div class="input-row">
+              <div>
+                <input
+                  type="text"
+                  id="fa-postal"
+                  placeholder="bv. 1029D"
+                  required
+                />
+                <span class="error">Voer een postcode in</span>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="fa-city"
+                  placeholder="bv. Antwerpen"
+                  required
+                />
+                <span class="error">Voer een plaatsnaam in</span>
+              </div>
+            </div>
+
+            <div>
+              <label for="addressOverview">Adresoverzicht</label>
+              <textarea
+                id="addressOverview"
+                name="addressOverview"
+                readonly
+              ></textarea>
+            </div>
+            <div>
+              <label for="fa-phoneNum">Telefoonnummer</label>
+              <input
+                type="tel"
+                id="fa-phoneNum"
+                required
+                pattern="^\+[0-9]{1,4}[0-9]{6,14}$"
+              />
+              <span class="error"
+                >Voer een geldig telefoonnummer in (bijv. +31612345678)</span
+              >
+            </div>
+            <div>
+              <label for="fa-email">E-mailadres</label>
+              <input type="email" id="fa-email" required />
+              <span class="error"
+                >Voer een geldig e-mailadres in (bijv. naam@voorbeeld.com)</span
+              >
+            </div>
+            <div class="nav-buttons">
+              <a href="#deadPerson" class="ns-button previous-btn">Vorige</a>
+              <a
+                href="#acquirer-1"
+                id="volgende2"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <!-- First acquirer fieldset - This is the template to be cloned in JS -->
+          <fieldset id="acquirer-1" class="form-section">
+            <legend>verkrijger 1</legend>
+
+            <label for="a1-BSN">Burgerservice nummer *</label>
+            <input
+              type="text"
+              id="a1-BSN"
+              name="bsn"
+              pattern="[0-9]{7,9}"
+              placeholder="123456789"
+              minlength="7"
+              maxlength="9"
+              required
+              title="BSN moet 7 tot 9 cijfers bevatten"
+            />
+
+            <span class="error-message">BSN moet 7 tot 9 cijfers bevatten</span>
+            <label for="a1-firstname">Voorletter(s) *</label>
+
+            <input
+              type="text"
+              id="a1-firstname"
+              name="firstname"
+              class="nameDots"
+              pattern="[A-Za-z\.]+"
+              placeholder="A.B.C."
+              required
+              title="Alleen letters zijn toegestaan"
+            />
+            <span class="error-message">Vul a.u.b. alleen letters in</span>
+
+            <label for="a1-between">Tussenvoegsel(s)</label>
+            <input
+              type="text"
+              id="a1-between"
+              name="between"
+              placeholder="van der"
+            />
+
+            <label for="a1-lastname">Achternaam *</label>
+            <input
+              type="text"
+              id="a1-lastname"
+              name="lastname"
+              placeholder="Jansen"
+              required
+            />
+            <span class="error-message">Vul a.u.b. een achternaam in</span>
+
+            <fieldset id="a1-wholeAmount">
+              <legend>
+                Krijgt deze verkrijger waarvoor u geen aangifte doet het hele
+                vermogen?
+              </legend>
+
+              <div>
+                <label for="a1-wa-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a1-wa-check"
+                  id="a1-wa-no"
+                  class="radio-input"
+                />
+
+                <label for="a1-wa-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a1-wa-yes"
+                  name="a1-wa-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+
+            <fieldset id="a1-portion">
+              <legend>
+                Doet deze verkrijger een beroep op diens legitieme portie
+                (wettelijke erfdeel)?
+              </legend>
+
+              <div>
+                <label for="a1-p-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a1-p-check"
+                  id="a1-p-no"
+                  class="radio-input"
+                />
+
+                <label for="a1-p-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a1-p-yes"
+                  name="a1-p-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <div class="nav-buttons">
+              <a href="#foreignAddress" class="ns-button previous-btn"
+                >Vorige</a
+              >
+              <a
+                href="#acquirer-2"
+                id="volgende3"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <!-- Second acquirer fieldset (copy of the first one with updated IDs) -->
+          <fieldset id="acquirer-2" class="form-section">
+            <legend>verkrijger 2</legend>
+            <label for="a2-BSN">Burgerservice nummer *</label>
+            <input
+              type="text"
+              id="a2-BSN"
+              name="bsn"
+              pattern="[0-9]{7,9}"
+              placeholder="123456789"
+              minlength="7"
+              maxlength="9"
+              required
+              title="BSN moet 7 tot 9 cijfers bevatten"
+            />
+            <span class="error-message">BSN moet 7 tot 9 cijfers bevatten</span>
+            <label for="a2-firstname">Voorletter(s) *</label>
+            <input
+              type="text"
+              id="a2-firstname"
+              name="firstname"
+              class="nameDots"
+              pattern="[A-Za-z\.]+"
+              placeholder="A.B.C."
+              required
+              title="Alleen letters zijn toegestaan"
+            />
+            <span class="error-message">Vul a.u.b. alleen letters in</span>
+            <label for="a2-between">Tussenvoegsel(s)</label>
+            <input
+              type="text"
+              id="a2-between"
+              name="between"
+              placeholder="van der"
+            />
+            <label for="a2-lastname">Achternaam *</label>
+            <input
+              type="text"
+              id="a2-lastname"
+              name="lastname"
+              placeholder="Jansen"
+              required
+            />
+            <span class="error-message">Vul a.u.b. een achternaam in</span>
+            <fieldset id="a2-wholeAmount">
+              <legend>
+                Krijgt deze verkrijger waarvoor u geen aangifte doet het hele
+                vermogen?
+              </legend>
+              <div>
+                <label for="a2-wa-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a2-wa-check"
+                  id="a2-wa-no"
+                  class="radio-input"
+                />
+                <label for="a2-wa-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a2-wa-yes"
+                  name="a2-wa-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <fieldset id="a2-portion">
+              <legend>
+                Doet deze verkrijger een beroep op diens legitieme portie
+                (wettelijke erfdeel)?
+              </legend>
+              <div>
+                <label for="a2-p-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a2-p-check"
+                  id="a2-p-no"
+                  class="radio-input"
+                />
+                <label for="a2-p-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a2-p-yes"
+                  name="a2-p-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <div class="nav-buttons">
+              <a href="#acquirer-1" class="ns-button previous-btn">Vorige</a>
+              <a
+                href="#acquirer-3"
+                id="volgende4"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <!-- Third acquirer fieldset -->
+          <fieldset id="acquirer-3" class="form-section">
+            <legend>verkrijger 3</legend>
+            <label for="a3-BSN">Burgerservice nummer *</label>
+            <input
+              type="text"
+              id="a3-BSN"
+              name="bsn"
+              pattern="[0-9]{7,9}"
+              placeholder="123456789"
+              minlength="7"
+              maxlength="9"
+              required
+              title="BSN moet 7 tot 9 cijfers bevatten"
+            />
+            <span class="error-message">BSN moet 7 tot 9 cijfers bevatten</span>
+            <label for="a3-firstname">Voorletter(s) *</label>
+            <input
+              type="text"
+              id="a3-firstname"
+              name="firstname"
+              class="nameDots"
+              pattern="[A-Za-z\.]+"
+              placeholder="A.B.C."
+              required
+              title="Alleen letters zijn toegestaan"
+            />
+            <span class="error-message">Vul a.u.b. alleen letters in</span>
+            <label for="a3-between">Tussenvoegsel(s)</label>
+            <input
+              type="text"
+              id="a3-between"
+              name="between"
+              placeholder="van der"
+            />
+            <label for="a3-lastname">Achternaam *</label>
+            <input
+              type="text"
+              id="a3-lastname"
+              name="lastname"
+              placeholder="Jansen"
+              required
+            />
+            <span class="error-message">Vul a.u.b. een achternaam in</span>
+            <fieldset id="a3-wholeAmount">
+              <legend>
+                Krijgt deze verkrijger waarvoor u geen aangifte doet het hele
+                vermogen?
+              </legend>
+              <div>
+                <label for="a3-wa-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a3-wa-check"
+                  id="a3-wa-no"
+                  class="radio-input"
+                />
+                <label for="a3-wa-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a3-wa-yes"
+                  name="a3-wa-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <fieldset id="a3-portion">
+              <legend>
+                Doet deze verkrijger een beroep op diens legitieme portie
+                (wettelijke erfdeel)?
+              </legend>
+              <div>
+                <label for="a3-p-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a3-p-check"
+                  id="a3-p-no"
+                  class="radio-input"
+                />
+                <label for="a3-p-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a3-p-yes"
+                  name="a3-p-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <div class="nav-buttons">
+              <a href="#acquirer-2" class="ns-button previous-btn">Vorige</a>
+              <a
+                href="#acquirer-4"
+                id="volgende5"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <!-- Fourth acquirer fieldset -->
+          <fieldset id="acquirer-4" class="form-section">
+            <legend>verkrijger 4</legend>
+            <label for="a4-BSN">Burgerservice nummer *</label>
+            <input
+              type="text"
+              id="a4-BSN"
+              name="bsn"
+              pattern="[0-9]{7,9}"
+              placeholder="123456789"
+              minlength="7"
+              maxlength="9"
+              required
+              title="BSN moet 7 tot 9 cijfers bevatten"
+            />
+            <span class="error-message">BSN moet 7 tot 9 cijfers bevatten</span>
+            <label for="a4-firstname">Voorletter(s) *</label>
+            <input
+              type="text"
+              id="a4-firstname"
+              name="firstname"
+              class="nameDots"
+              pattern="[A-Za-z\.]+"
+              placeholder="A.B.C."
+              required
+              title="Alleen letters zijn toegestaan"
+            />
+            <span class="error-message">Vul a.u.b. alleen letters in</span>
+            <label for="a4-between">Tussenvoegsel(s)</label>
+            <input
+              type="text"
+              id="a4-between"
+              name="between"
+              placeholder="van der"
+            />
+            <label for="a4-lastname">Achternaam *</label>
+            <input
+              type="text"
+              id="a4-lastname"
+              name="lastname"
+              placeholder="Jansen"
+              required
+            />
+            <span class="error-message">Vul a.u.b. een achternaam in</span>
+            <fieldset id="a4-wholeAmount">
+              <legend>
+                Krijgt deze verkrijger waarvoor u geen aangifte doet het hele
+                vermogen?
+              </legend>
+              <div>
+                <label for="a4-wa-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a4-wa-check"
+                  id="a4-wa-no"
+                  class="radio-input"
+                />
+                <label for="a4-wa-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a4-wa-yes"
+                  name="a4-wa-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <fieldset id="a4-portion">
+              <legend>
+                Doet deze verkrijger een beroep op diens legitieme portie
+                (wettelijke erfdeel)?
+              </legend>
+              <div>
+                <label for="a4-p-no">Nee</label>
+                <input
+                  type="radio"
+                  name="a4-p-check"
+                  id="a4-p-no"
+                  class="radio-input"
+                />
+                <label for="a4-p-yes">Ja</label>
+                <input
+                  type="radio"
+                  id="a4-p-yes"
+                  name="a4-p-check"
+                  class="radio-input"
+                />
+              </div>
+            </fieldset>
+            <div class="nav-buttons">
+              <a href="#acquirer-3" class="ns-button previous-btn">Vorige</a>
+              <a
+                href="#bank-savings-Amount"
+                id="volgende6"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <fieldset id="bank-savings-Amount" class="form-section">
+            <legend>Bank- en Spaarrekeningen op de overlijdensdatum</legend>
+
+            <div class="form-group">
+              <label for="bsa-IBAN-shared"
+                >Rekeningnummer (IBAN) gemeenschappelijke rekening</label
+              >
+              <input
+                type="text"
+                id="bsa-IBAN-shared"
+                maxlength="34"
+                placeholder="NL91 ABNA 0417 1643 00"
+                required
+              />
+              <div class="error-message" id="iban-error">Voer een IBAN in</div>
+            </div>
+
+            <div class="form-group">
+              <label for="bsa-Amount-shared"
+                >Saldo gemeenschappelijke rekening</label
+              >
+              <div class="currency-input-container">
+                <span class="currency-symbol" id="currency-symbol">€</span>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  id="bsa-Amount-shared"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <div class="error-message" id="amount-error">
+                Voer een geldig bedrag in
+              </div>
+            </div>
+
+            <div class="nav-buttons">
+              <a href="#verkrijgers-container" class="ns-button previous-btn"
+                >Vorige</a
+              >
+              <a
+                href="#overview-1"
+                id="volgende7"
+                class="ns-button volgende-btn"
+                >Doorgaan</a
+              >
+            </div>
+          </fieldset>
+
+          <fieldset id="overview-1" class="form-section">
+            <legend>Alles ingevuld?</legend>
+            <p>
+              Controleer of u alle gegevens juist heeft ingevuld voordat u
+              doorgaat.
+            </p>
+
+            <!-- Basic confirmation for non-JS version -->
+            <div class="nav-buttons">
+              <a href="#bank-savings-Amount" class="ns-button previous-btn"
+                >Vorige</a
+              >
+              <button type="submit" class="ns-button">Bevestigen</button>
+            </div>
+          </fieldset>
+
+          <!-- Overview-2 - Used when JavaScript IS enabled (with improved styling) -->
+          <fieldset id="overview-2">
+            <legend>Overzicht van uw ingevulde data</legend>
+
+            <div class="overview-section">
+              <div id="deadperson-info" class="overview-card">
+                <!-- Will be populated by JavaScript -->
+              </div>
+              <a href="#deadPerson" class="edit-link"
+                >Bovenstaande gegevens kloppen niet</a
+              >
+            </div>
+
+            <div class="overview-section">
+              <div id="foreignAdress-info" class="overview-card">
+                <!-- Will be populated by JavaScript -->
+              </div>
+              <a href="#foreignAddress" class="edit-link"
+                >Bovenstaande gegevens kloppen niet</a
+              >
+            </div>
+
+            <div class="overview-section">
+              <div id="acquirers-info" class="overview-card">
+                <!-- Will be populated by JavaScript -->
+              </div>
+              <a href="#verkrijgers-container" class="edit-link"
+                >Bovenstaande gegevens kloppen niet</a
+              >
+            </div>
+
+            <div class="overview-section">
+              <div id="bankSavingsAmount-info" class="overview-card">
+                <!-- Will be populated by JavaScript -->
+              </div>
+              <a href="#bank-savings-Amount" class="edit-link"
+                >Bovenstaande gegevens kloppen niet</a
+              >
+            </div>
+
+            <div class="nav-buttons">
+              <a href="#bank-savings-Amount" class="ns-button previous-btn"
+                >Vorige</a
+              >
+              <input
+                type="submit"
+                class="ns-button"
+                id="einde"
+                value="Definitief verzenden"
+              />
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <header>
+      <nav class="menu-container">
+        <a href="/home" class="logo-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="51"
+            height="20"
+            viewBox="0 0 51 20"
+          >
+            <path
+              d="M22.358,9.6A5.543,5.543,0,0,0,18.448,8H7.62l4.01-4H21.757a1.612,1.612,0,0,1,1.1.5l5.915,5.9a5.543,5.543,0,0,0,3.91,1.6H43.513L39.5,16H29.376a1.612,1.612,0,0,1-1.1-.5Zm3.108,8.7a6.1,6.1,0,0,0,3.91,1.7h11.73L51.133,10,41.107,0H35.492l8.021,8H32.685a2.11,2.11,0,0,1-1.1-.4L25.667,1.7A6.1,6.1,0,0,0,21.757,0H10.026L0,10,10.026,20h5.615L7.62,12H18.448a2.109,2.109,0,0,1,1.1.4Z"
+            />
+          </svg>
+        </a>
         <div>
-            <label class="text-3-field"  for="Voorletters">Voorletter(s), tussenvoegsel(s) en achternaam
-                <input type="text" name="Voorletters">
-                <input type="text">
-                <input type="text">
-            </label>
+          <a href="/account">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Layer_1"
+              x="0px"
+              y="0px"
+              width="30px"
+              height="30px"
+              viewBox="0 0 35 35"
+              enable-background="new 0 0 35 35"
+              xml:space="preserve"
+            >
+              <g>
+                <g>
+                  <g>
+                    <path
+                      d="M17.5,18c-2.2,0-4-2-4-4.5v-1c0-2.5,1.8-4.5,4-4.5s4,2,4,4.5v1C21.5,16,19.7,18,17.5,18z M17.5,9c-1.7,0-3,1.6-3,3.5v1     c0,1.9,1.3,3.5,3,3.5s3-1.6,3-3.5v-1C20.5,10.6,19.2,9,17.5,9z"
+                    />
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path
+                      d="M18,27H9v-3c0-2.4,2-5.2,4.5-5.2c0.3,0,0.5,0.2,0.5,0.5s-0.2,0.5-0.5,0.5c-1.9,0-3.5,2.3-3.5,4.2v2h8     c0.3,0,0.5,0.2,0.5,0.5S18.3,27,18,27z"
+                    />
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path
+                      d="M26,27h-9c-0.3,0-0.5-0.2-0.5-0.5S16.7,26,17,26h8v-2c0-1.9-1.6-4.2-3.5-4.2c-0.3,0-0.5-0.2-0.5-0.5s0.2-0.5,0.5-0.5     c2.5,0,4.5,2.8,4.5,5.2V27z"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#menu-content" class="menu-toggle"></a>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <div>
-            <label for="">Burgerservicenummer overledende
-                <input type="text" name="Voorletters" maxlength="9">
-            </label>
-        </div>
-            <label for="">Datum huwelijkse of partnerschapsvoorwaarden
-                <div class="date-input-container">
-                    <input type="number" id="day" class="date-segment" placeholder="DD" min="1" max="31" maxlength="2">
-                    <span class="date-separator">-</span>
-                    <input type="number" id="month" class="date-segment" placeholder="MM" min="1" max="12" maxlength="2">
-                    <span class="date-separator">-</span>
-                    <input type="number" id="year" class="date-segment" placeholder="JJJJ" min="1900" max="2100" maxlength="4" style="width: 4em;">
-                </div>
-             </label>
-    
-        </section>
+      </nav>
+    </header>
 
-        <section>
-            <p>1b</p>
-            <!-- Getrouwd? -->
-            <label class="2-check-question" for="">Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?
-                <label for="nee">Nee
-                    <input type="checkbox" name="nee">
-                </label>
-                <label for="ja">Ja
-                    <input type="checkbox" name="ja">
-                </label>
-            </label>
-            <!-- Voorwaarden -->
-            <label class="2-check-question" for="">Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?
-                <label for="nee">Nee
-                    <input type="checkbox" name="nee">
-                </label>
-                <label for="ja">Ja. Stuur een kopie van de akte mee met de aangifte
-                    <input type="checkbox" name="ja">
-                </label>
-            </label>
-            <!-- finaal verrekenbeding -->
-            <label class="2-check-question" for="">Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?
-                <label for="nee">Nee
-                    <input type="checkbox" name="nee">
-                </label>
-                <label for="ja">Ja
-                    <input type="checkbox" name="ja">
-                </label>
-            </label>
+    <div id="menu-content" class="menu-content">
+      <a href="#" class="close-menu">&times;</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </div>
 
-            <!-- Datum Voorwaarden -->
-             <label for="">Datum huwelijkse of partnerschapsvoorwaarden
-                <div class="date-input-container">
-                    <input type="number" id="day" class="date-segment" placeholder="DD" min="1" max="31" maxlength="2">
-                    <span class="date-separator">-</span>
-                    <input type="number" id="month" class="date-segment" placeholder="MM" min="1" max="12" maxlength="2">
-                    <span class="date-separator">-</span>
-                    <input type="number" id="year" class="date-segment" placeholder="JJJJ" min="1900" max="2100" maxlength="4" style="width: 4em;">
-                </div>
-             </label>
-        </section>
-
-        <section>
-            <p>1c</p>
-              <!-- kinderen? -->
-            <label class="2-check-question" for="">Had de overledene kinderen?
-                <label for="nee">Nee
-                    <input type="checkbox" name="nee">
-                </label>
-                <label for="ja">Ja
-                    <input type="checkbox" name="ja">
-                </label>
-            </label>
-               <!-- kind eerder overleden? -->
-            <label class="2-check-question" for="">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
-                <label for="nee">Nee
-                    <input type="checkbox" name="nee">
-                </label>
-                <label for="ja">Ja
-                    <input type="checkbox" name="ja">
-                </label>
-            </label>
-               <!-- overleden kind met kinderen? -->
-            <label class="2-check-question" for="">Had dit overleden kind zelf kinderen?
-                <label for="nee">Nee
-                    <input type="checkbox" name="nee">
-                </label>
-                <label for="ja">Ja
-                    <input type="checkbox" name="ja">
-                </label>
-            </label>
-        </section>
-
-        <section>
-            <p>1d</p>
-                <!-- Testament -->
-                <label class="2-check-question" for="">Had dit overleden kind zelf kinderen?
-                    <label for="nee">Nee
-                        <input type="checkbox" name="nee">
-                    </label>
-                    <label for="ja">Ja
-                        <input type="checkbox" name="ja">
-                    </label>
-                </label>
-
-                <div>
-                    <label for="">Protocolnummer notaris
-                        <input type="number" id="protocol" maxlength="6">
-                    </label>
-                    <label class="text-3-field" for="Voorletters">Voorletter(s), tussenvoegsel(s) en achternaam
-                        <input type="text" name="Voorletters">
-                        <input type="text">
-                        <input type="text">
-                    </label>
-                    <label for="">Vestegingsplaats
-                        <input type="text">
-                    </label>
-                    <label for="">Datum huwelijkse of partnerschapsvoorwaarden
-                        <div class="date-input-container">
-                            <input type="number" id="day" class="date-segment" placeholder="DD" min="1" max="31" maxlength="2">
-                            <span class="date-separator">-</span>
-                            <input type="number" id="month" class="date-segment" placeholder="MM" min="1" max="12" maxlength="2">
-                            <span class="date-separator">-</span>
-                            <input type="number" id="year" class="date-segment" placeholder="JJJJ" min="1900" max="2100" maxlength="4" style="width: 4em;">
-                        </div>
-                     </label>
-                </div>
-        </section>
-    </section>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

@@ -1,22 +1,26 @@
-:root{
-    --button-text: 16px;
-    --text: 16px;
-    --h2: 64px;
-    --nav: 18px;
+/* ===== ROOT VARIABLES ===== */
+:root {
+  /* Typography */
+  --text: 16px;
+  --button-text: 16px;
+  --h2: clamp(2em, calc((10800px - 100vw) * 1000), 9vw);
+  --nav: 18px;
+  --p: clamp(1em, calc((800px - 100vw) * 1000), 1vw);
 
-    --body-width: 100dvw;
-    --section-height: 10em;
+  /* Layout */
+  --body-width: 100dvw;
+  --section-height: 10em;
+  --header-height: 115px;
+  --warning-height: 4em;
+  --warning-padding: 0.1em;
 
-    --header-height: 115px;
-    --warning-height: 2em ;
-
-    /* Primary colours */
+  /* Primary colors */
   --ns-yellow: #ffc917;
   --ns-blue: #003082;
   --ns-lightBlue: #0063d3;
   --ns-white: #ffffff;
 
-  /* Shades of grey */
+  /* Grays */
   --ns-gray-text: #070721;
   --ns-gray-10: #202037;
   --ns-gray-20: #39394d;
@@ -29,143 +33,138 @@
   --ns-gray-90: #e6e6e9;
   --ns-gray-94: #f0f0f2;
 
-  /* Special Colours */
+  /* Special Colors */
   --ns-error: #db0029;
   --ns-succes: #009a42;
   --ns-ov: #ff0098;
   --ns-bus: #ff7700;
 
-  /* Link and hover colours */
+  /* Links and Hovers */
   --ns-link-blue: #0079d3;
   --ns-hover-blue: #005ca0;
   --ns-hover-yellow: #ffb519;
+  --ns-box-shadow: #0e528a;
 
-  /* Transparency colours */
-  --ns-gray-alpha-60: #070721 (60%);
-  --ns-gray-alpha-15: #070721 (15%);
-  --ns-gray-alpha-10: #070721 (10%);
-
-
-  --warning-padding: .1em;
-
+  /* Transparency Colors */
+  --ns-gray-alpha-60: rgba(7, 7, 33, 0.6);
+  --ns-gray-alpha-15: rgba(7, 7, 33, 0.15);
+  --ns-gray-alpha-10: rgba(7, 7, 33, 0.1);
 }
 
-body{
-    font-family: 'CartoGothicStd', sans-serif;
+/* ===== BASE STYLES ===== */
+body {
+  font-family: "NSSans", sans-serif;
+  background-color: var(--ns-gray-90);
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2{
-    font-size: var(--h2);
-    color: var(--ns-blue);
+body * {
+  margin: 0;
+  padding: 0;
 }
 
-
-
-body{
-    background-color: var(--ns-gray-90);
-
-    
-}
-
-body, body *{
-    margin: 0;
-    padding: 0;
+h1, h2 {
+  font-size: var(--h2);
+  color: var(--ns-blue);
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    font-style: italic;
-    background-repeat: no-repeat;
-    background-size: cover;
-    shape-margin: 1rem;
-  }
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
 
-.warning{
-    display: flex;
-    height: var(--warning-height);
-    background-color: #39394D;
-    color: white;
-    width: var(--body-width);
-    padding: var( --warning-padding);
-    justify-content: center;
-    /* gap: 1em; */
-    align-items: center;
-    z-index: 100;
-  }
-  .warning svg{
-    fill: white;
-  }
-  
-  .warning p {
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-  }
+/* ===== COMPONENTS ===== */
+.warning {
+  display: flex;
+  height: var(--warning-height);
+  background-color: var(--ns-gray-20);
+  color: var(--ns-white);
+  width: var(--body-width);
+  padding: var(--warning-padding);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
 
+.warning svg {
+  fill: white;
+}
 
-  
+.warning p {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
 
-/* #region Font faces */
+.ns-button {
+  background-color: var(--ns-lightBlue);
+  color: var(--ns-white);
+  border: none;
+  padding: 1.2em;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 2px 0px var(--ns-box-shadow);
+  background-image: linear-gradient(
+    to top,
+    var(--ns-hover-blue) 50%,
+    var(--ns-lightBlue) 50%
+  );
+  background-size: 100% 200%;
+  background-position: top;
+  transition: background-position 0.3s ease;
+  cursor: pointer;
+}
+
+.ns-button:hover {
+  background-position: bottom;
+}
+
+/* ===== FONT FACES ===== */
 @font-face {
-    font-family: CartoGothicStd;
-    src: url('fonts/CartoGothicStd-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: NSSans;
+  src: url("fonts/nssans-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: CartoGothicStd;
-    src: url('fonts/CartoGothicStd-BoldItalic.otf') format('opentype');
-    font-weight:bold;
-    font-style: italic;
-    font-display: swap;
+  font-family: NSSans;
+  src: url("fonts/nssans-italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: CartoGothicStd;
-    src: url('fonts/CartoGothicStd-Book.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: NSSans;
+  src: url("fonts/nssans-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: CartoGothicStd;
-    src: url('fonts/CartoGothicStd-Italic.otf') format('opentype');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+  font-family: NSSans;
+  src: url("fonts/nssans-bolditalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
-/* #endregion */
-
-/*#region media Queries */
-/* @media screen and (max-width: 768px){
-    :root{
-        --section-width: ;
-        --section-height: ;
-    }
-} */
-
-/* @media screen and (min-width: 768px) and (max-width: 1023px) {
-    :root{
-        --section-width: ;
-        --section-height: ;
-    }
-} */
-
-/* @media screen and (min-width: 1024px) {
-    :root{
-        --section-width: 2em;
-        --section-height: 1em;
-    }
-} */
-
-/* #endregion */
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 400px) {
+  :root {
+    --progress-direction: column;
+    --progress-gap: 0.1em;
+  }
+}
