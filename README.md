@@ -96,12 +96,16 @@ Hierna kan de gebruiker de achternaam invullen, waar ook de mogelijkheid is om e
 Vervolgens wordt er gevraagd om het BSN nummer van de overledene. (<b>Met Javascript wordt er een berekening uitgevoerd op het bsn nummer met een wiskundige formule om te kijken of het bsn nummer wel een geldig nummer is</b> || <i>Zonder javascript wordt er alleen gekeken naar de lengte van het bsn nummer</i>)<br>
 Als laatste input veld in deze fieldset wordt gevraagd om de datum in te vullen voor de overledene. Dit veld is puur met html, en gebruikt de date type waardoor er een icoontje bij komt in het veld wat er voor zorgt dat de gebruiker ook het ingebouwde datum picker tooltje kan gebruiken. <br><br>
   <img src="doc-images/adres-buitenland.png" alt=""><br>
-  Het volgende onderdeel in het formulier is dat de gebruiker het adres in het buitenland moet gaan invullen. Hier heb ik ervoor gekozen om het gewenste land 
+  Het volgende onderdeel in het formulier is dat de gebruiker het adres in het buitenland moet gaan invullen. Hier heb ik ervoor gekozen om het gewenste land als eerste te laten invullen. dit is een datalist waar de gebruik kan gaan typen en uiteindlijk het land selecteren wat overeenkomt met wat hij/zij/hen getypt heeft. De velden hierna zijn standaard velden: straat, huisnummer, postcode en stad. <b>Wat ik nog speciaal doe met Javscript is dat ik op basis van bepaalde landen de pattern voor de postcode aanpas waardoor de gebruiker weet welke structuur nodig is voor het invullen van het formulier. In het adres overzicht haal ik alle informatie op uit de velden hiervoor zodat de gebruiker kan checken of deze data klopt.</b><br>
+  Hierna wordt gevraagd om een telefoonnummer in te vullen. <b>Middels een functie in Javascript zorg ik ervoor dat er een "+"icoontje wordt geplaatst in het input veld als de gebruiker begint met typen.</b><br>
+Het laatste veld is een email input veld <b>Met javascript check ik naar een @ en een . om te kijken of dit wel de structuur is van een email formulier.</b>
   <br><img src="doc-images/verkrijgers.png" alt=""><br>
-  <br><img src="doc-images/2e-verkrijger.png" alt=""><br>
+  De derde fieldset is dat de gebruiker verkrijgers moet gaan toevoegen. In een verkrijger veld staan dezelfde velden als in de eerste fieldset, Burgerservicenummer, Voorletters, tussenvoegsels en een achternaam. Er zijn ook twee blokken bijgekomen met hier in een Ja/Nee vraag, dit werkt middels radio buttons. De gebruiker dan dus maar 1 keuze geven. <br><i>Zonder javascript staan er altijd 4 verkrijger fieldsets klaar.</i> || <b>Met Javascript staat er altijd maar 1 verkrijger, en komt er een knop waarmee de gebruiker extra verkrijger velden kan toevoegen. Deze velden kunnen ook weer verwijderd worden met een andere knop (de velden worden doormiddel van het clonen van de html toegevoegd)</b><br>
+<img src="doc-images/2e-verkrijger.png" alt=""><br>
   <br><img src="doc-images/Valuta.png" alt=""><br>
+  De laatste fieldset waar de gebruik data moet invullen is dat waar gevraagd wordt naar een IBAN en het bedrag wat er op deze rekening staat. De gebruiker wordt gevraagd om het IBAN in te vullen <b>Javascript zorgt ervoor dat er ruimte komt tussen de verschillende onderdelen van het iban.</b>
   <br><img src="doc-images/overview2.png" alt=""><br>
-  
+  Het laatste scherm in het formulier is een overzicht waar de gebruiker alle data nog eens kan bewonderen, mochten er fouten zijn. Dan kan de gebruiker op de link klikken dat zich onder het veld bevindt waar nog fouten in zitten. Vervolgens wordt de gebruiker weer terug gestuurd naar dit veld.
   <br><img src="doc-images/progress-small screen.png" alt=""><br>
   Wanneer de gebruiker het formulier op een scherm smaller als 400px zal gaan invullen zal de progress bar veranderd van de verschillende paden naast elkaar, naar dat de paden onder elkaar zichtbaar zullen worden. Dit is natuurlijk alleen bij Javascript zo, gezien de progress bar anders niet zichtbaar hoort te zijn.
 
@@ -115,7 +119,10 @@ Als laatste input veld in deze fieldset wordt gevraagd om de datum in te vullen 
   Deze overview fieldset wordt laten zien als er geen javascript aan staat, wat een basis veld is om voor de gebruiker te kunnen kiezen uit laat ik ik nog eens door al mijn velden gaan om te kijken of het klopt, of om het formulier te versturen.
 
 
-  ## Loca storage
+  ## Local storage
+  <br> <img src="doc-images/localstorage.png" alt=""><br>
+  In de afbeelding hierboven is te zien hoe de data van de gebruiker wordt opgeslagen. Het object "NsFormData" krijgt alle data als geheel object in zich te hebben en met sub objecten wordt er gezorgd dat de data toch wordt gecategoriseerd. Als we bijvoorbeeld kijken naar data uit adres in het buitenland wordt het land wat ingevoerd is, zowel als volledig land opgeslagen als de landcode die de belastingdienst gebruikt.
+Een ander belangrijk deel wat opgeslagen wordt zijn de verkrijgers, als er een verkrijger veld wordt toegevoegd wordt er automatisch een verkrijger object aangemaakt.
 
   ## Ontbrekende Onderdelen
   <img src="doc-images/overview1.png" alt=""><br>
@@ -124,7 +131,10 @@ Als laatste input veld in deze fieldset wordt gevraagd om de datum in te vullen 
   
   <img src="doc-images/Valuta.png" alt=""><br>
   De iban validation heb ik eruit gehaald omdat toen ik aan het testen was kreeg ik foutmeldingen dat de IBAN's die ik zelf bezit niet geldig waren. Dus ik zou nog opzoek willen gaan naar een betere berekening/validatie om dit wel te kunnen toepassen.
-Daarnaast had ik (zoals in de codepen van deze fieldset) een manier gemaakt om het valuta icoontje aante passen naar aanleiding van de eerste letters van de IBAN, dit heb ik in het eindresultaat eruit gehaald gezien ik hier een aantal problemen mee had. Dit zou ik ook nog willen onderzoeken en aanpassen, want het is wel een leuke feature voor de gebruiker.
+Daarnaast had ik (zoals in de codepen van deze fieldset) een manier gemaakt om het valuta icoontje aante passen naar aanleiding van de eerste letters van de IBAN, dit heb ik in het eindresultaat eruit gehaald gezien ik hier een aantal problemen mee had. Dit zou ik ook nog willen onderzoeken en aanpassen, want het is wel een leuke feature voor de gebruiker. <br><br>
+
+De submit functie voor het formulier werkt ook niet naar behoren dus dat zou ik ook nog graag willen aanpassen met meer tijd.
+
 
   ### Wat ik niet heb ingebouwd maar wel wilde!
   Ik had graag nog een aantal functies en onderdelen willen toevoegen om dit document nog gebruiksvriendelijker te maken.
