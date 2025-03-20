@@ -62,8 +62,7 @@ De onderwerpen hierboven zijn gelinkt aan de verschillende codepen's die ik heb 
 
 
 ## Week 4: Toch weer naar VS code & de laatste loodjes
-In de laatste week ben ik met de laatste merge begonnen. Ik zorgde ervoor dat ik alle functionaliteiten die ik in mijn Codepen's had gebouwd over zette naar mijn VS code project.
-
+In de laatste week ben ik met de laatste merge begonnen. Ik zorgde ervoor dat ik alle functionaliteiten die ik in mijn Codepen's had gebouwd over zetten naar mijn VS code project. Ik heb de html in elkaar geduwd, de Css samengevoegd en selectoren die dubbel stonden weggehaald. Net als de styling die ik in main.css had staan ook aangepast. De Javascript heb ik samengevoegd om de enhancement door te kunnen voeren.
 
 
 ### Terugblik van Browser Technology
