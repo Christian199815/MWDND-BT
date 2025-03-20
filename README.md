@@ -62,8 +62,15 @@ De onderwerpen hierboven zijn gelinkt aan de verschillende codepen's die ik heb 
 
 
 ## Week 4: Toch weer naar VS code & de laatste loodjes
+In de laatste week ben ik met de laatste merge begonnen. Ik zorgde ervoor dat ik alle functionaliteiten die ik in mijn Codepen's had gebouwd over zette naar mijn VS code project.
 
 
+
+### Terugblik van Browser Technology
+Als ik zo terug kijk naar het vak heb ik een hoop nieuwe dingen geleerd op het gebied van wat er allemaal mogelijk is met Html en Css. Ik heb veel feedback kunnen krijgen op mijn werk door de gesprekjes met Vasilis en Krijn. Ik heb veel nieuwe dingen geleerd als we het hebben over toegankelijkheid.<br>
+Maar wat ook meespeelt is dat ik een aantal keer tijdens deze weken met mn haren in het hoofd heb gezeten omdat ik de structuur van de opdracht niet helemaal goed begreep. Dit is wel verbetert in de loop van het proces, maar heeft er ook voor gezorgd dat ik in de laatste weken echt de meeste stappen heb gezet naar mijn einddoel. <br>
+Wat mij ondduidelijk was en wat me eigenlijk wel heeft tegengewerkt is het aantal patronen wat ik in mijn eindopdracht heb moeten verwerken. Ik heb uiteindelijk 4 patronen ingebouwd, maar vermoed dat de keuze om deze 4 te doen wel er toe heeft geleid dat er een aantal functies nu niet werken wat ik erg jammer vindt. <br> <br>
+Een leerdoel wat ik dan ook zal meenemen naar mijn volgende projecten binnen deze minor is dat ik vanaf het begin een hoop minder hooi op mijn vork zal gaan nemen. Ik start klein, werk dit uit. Daarna zal ik pas gaan uitbreiden, eerst zorgen voor een goede basis.
 
 
 </details>
@@ -73,17 +80,30 @@ De onderwerpen hierboven zijn gelinkt aan de verschillende codepen's die ik heb 
 
   ## NS Erfbelasting 2023
   Na vier weeken zwoegen heb ik deze websitie gemaakt waar in ik delen van het erfbelasting fysieke formulier heb omgezet. 
+  Dit digitale formulier is gemaakt om te werken zonder javascript, maar met javascript zijn er een aantal enhancements om het     gemakkelijker te maken voor de gebruiker. 
+
+  <b>Wanneer de tekst bold is zal dit te maken hebben dat dit er zo uit ziet MET Javascript</b><br>
+  <i>Wanneer de tekst italic is zal dit te maken hebben dat dit er zo uit ziet ZONDER Javascript</i>
 
 
-  ## Wel Javascript
-  <img src="doc-images/Erf Belasting intro.png" alt="">
-  <img src="doc-images/overledene.png" alt="">
-  <img src="doc-images/adres-buitenland.png" alt="">
+  ## Opbouw met Javascript
+  <img src="doc-images/Erf Belasting intro.png" alt=""><br>
+  Deze intro tekst is voor de gebruiker om te lezen waar het formulier over gaat. Wat er van de gebruiker wordt verwacht, maar ook wat de gebruiker kan verwachten. Deze tekst en titel zijn in principe ook wat de gebruiker zou lezen als Javascript niet werkt. Maar de progressiebalk onderaan is niet wat zichtbaar zou zijn, dit is een enhancement waarvoor ik heb gekozen om deze alleen met javascript te doen.
+  <img src="doc-images/overledene.png" alt=""><br>
+  Wanneer de gebruiker van start gaat met het invullen van het formulier is deze fieldset het eerste deel wat hij/zij/hen zal gaan invullen. Hier gaat het over de informatie over de persoon die is overleden. Hiervoor moet de gebruiker de voorletters invullen van de overledene. (<b>Middels Javascript zal een functie in werking gaan die een punt zet achter de letters die de gebruiker typt, mocht de gebruiker zelf een punt willen typen wordt dit niet mogelijk gemaakt.</b> || <i>Zonder het gebruik van Javascript kan de gebruiker alle letters achter elkaar invullen, hiervoor zou de server er zelf punten achter zetten</i>)
+<br><br>
+Hierna kan de gebruiker de achternaam invullen, waar ook de mogelijkheid is om een tussenvoegsel in te vullen.<br>
+Vervolgens wordt er gevraagd om het BSN nummer van de overledene. (<b>Met Javascript wordt er een berekening uitgevoerd op het bsn nummer met een wiskundige formule om te kijken of het bsn nummer wel een geldig nummer is</b> || <i>Zonder javascript wordt er alleen gekeken naar de lengte van het bsn nummer</i>)<br>
+Als laatste input veld in deze fieldset wordt gevraagd om de datum in te vullen voor de overledene. Dit veld is puur met html, en gebruikt de date type waardoor er een icoontje bij komt in het veld wat er voor zorgt dat de gebruiker ook het ingebouwde datum picker tooltje kan gebruiken. <br><br>
+  <img src="doc-images/adres-buitenland.png" alt=""><br>
+  Het volgende onderdeel in het formulier is dat de gebruiker het adres in het buitenland moet gaan invullen. Hier heb ik ervoor gekozen om het gewenste land 
+  <br><img src="doc-images/verkrijgers.png" alt=""><br>
+  <br><img src="doc-images/2e-verkrijger.png" alt=""><br>
+  <br><img src="doc-images/Valuta.png" alt=""><br>
+  <br><img src="doc-images/overview2.png" alt=""><br>
   
-  <img src="doc-images/verkrijgers.png" alt="">
-  <img src="doc-images/2e-verkrijger.png" alt="">
-  <img src="doc-images/Valuta.png" alt="">
-  <img src="doc-images/progress-small screen.png" alt="">
+  <br><img src="doc-images/progress-small screen.png" alt=""><br>
+  Wanneer de gebruiker het formulier op een scherm smaller als 400px zal gaan invullen zal de progress bar veranderd van de verschillende paden naast elkaar, naar dat de paden onder elkaar zichtbaar zullen worden. Dit is natuurlijk alleen bij Javascript zo, gezien de progress bar anders niet zichtbaar hoort te zijn.
 
 
 
@@ -93,7 +113,9 @@ De onderwerpen hierboven zijn gelinkt aan de verschillende codepen's die ik heb 
 
   <img src="doc-images/overview1.png" alt=""><br>
   Deze overview fieldset wordt laten zien als er geen javascript aan staat, wat een basis veld is om voor de gebruiker te kunnen kiezen uit laat ik ik nog eens door al mijn velden gaan om te kijken of het klopt, of om het formulier te versturen.
-  
+
+
+  ## Loca storage
 
   ## Ontbrekende Onderdelen
   <img src="doc-images/overview1.png" alt=""><br>
@@ -115,6 +137,9 @@ Daarnaast had ik (zoals in de codepen van deze fieldset) een manier gemaakt om h
 
   #### Dubbel check
   Ik zou voor de gebruikere een pop up (pop-over) maken warin gevraagd wordt of de gebruiker zeker weet om het formulier te versturen.
+
+  #### Datum input alleen data van nu en in het verleden
+De datum picker input velden zou ik ervoor willen zorgen dat zij alleen een datum in het verleden en vandaag zichtbaar maken. Zodat gebruikers niet per ongeluk een datum in de toekomst aan kunnen klikken.
 
 </details>
 
